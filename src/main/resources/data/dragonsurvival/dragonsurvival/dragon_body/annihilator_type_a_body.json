@@ -1,0 +1,82 @@
+{
+  "animation": "dragonsurvival:annihilator_type_a_animation",
+   "model": "dragonsurvival:annihilator_type_a_model",
+  "backpack_offset": {
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "bettercombat_weapon_offset": -3.0,
+  "can_hide_wings": false,
+  "crouch_height_ratio": 0.83333333,
+  "default_icon": "dragonsurvival:textures/gui/custom/body/center/annihilator_type_a.png",
+  "emotes": "dragonsurvival:annihilator_type_a",
+  "is_default": false,
+  "modifiers": [
+    {
+      "amount": 0.15,
+      "attribute": "dragonsurvival:flight_speed",
+      "operation": "add_multiplied_total"
+    },
+	{
+      "amount": 0.15,
+      "attribute": "neoforge:swim_speed",
+      "operation": "add_multiplied_total"
+    },
+	{
+      "amount": 0.15,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "add_multiplied_total"
+    },
+	{
+      "amount": 0.15,
+      "attribute": "minecraft:generic.jump_strength",
+      "operation": "add_value"
+    },
+	{
+      "amount": -0.1,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "add_multiplied_total"
+    },
+    {
+      "amount": -0.5,
+      "attribute": "minecraft:generic.attack_knockback",
+      "operation": "add_multiplied_total"
+    },
+    {
+      "amount": 1.0,
+      "attribute": "dragonsurvival:flight_stamina",
+      "operation": "add_multiplied_total"
+    },
+	{
+      "amount": -0.1,
+      "attribute": "minecraft:generic.armor",
+      "operation": "add_multiplied_total"
+    }
+    
+  ],
+  "mounting_offset": {
+    "dragon_offset": [
+      0.0,
+      0.05,
+      -1.2
+    ],
+    "human_offset": [
+      0.0,
+      -0.15,
+      -1.2
+    ],
+    "offset_per_scale_above_one": [
+      0.0,
+      -0.25,
+      -0.5
+    ]
+  },
+  "scaling_proportions": {
+    "eye_height": 1.8,
+    "height": 2.0,
+    "width": 0.6
+  }
+}

@@ -1,0 +1,2 @@
+Placeholder so the sandbox provisions write access for the generated ring texture.
+The texture itself (annihilation_ring.png) is produced by tools/generate_annihilation_ring.py.

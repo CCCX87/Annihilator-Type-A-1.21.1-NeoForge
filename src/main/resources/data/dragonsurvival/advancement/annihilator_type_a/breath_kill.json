@@ -1,0 +1,37 @@
+{
+  "parent": "dragonsurvival:annihilator_type_a/rock_eater",
+  "criteria": {
+  "brearth_kill": {
+    "trigger": "minecraft:player_killed_entity",
+    "conditions": {
+      "killing_blow": {
+        "tags": [
+          {
+            "id": "annihilator_type_a:annihilator_breath",
+            "expected": true
+          }
+        ]
+      }
+    }
+  }
+},
+  "display": {
+    "description": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/brearth_kill.desc"
+    },
+    "icon": {
+      "id": "dragonsurvival:hunter_partisan_diamond"
+    },
+    "title": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/brearth_kill"
+    }
+  },
+  "requirements": [
+    [
+      "brearth_kill"
+    ]
+  ],
+  "rewards": {
+    "experience": 12
+  }
+}

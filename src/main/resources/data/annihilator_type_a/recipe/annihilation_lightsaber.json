@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": { "item": "minecraft:glass" },
+    "N": { "item": "minecraft:netherite_ingot" },
+    "E": { "item": "annihilator_type_a:energy_bar" },
+    "D": { "item": "minecraft:diamond" }
+  },
+  "pattern": [
+    " G ",
+    "DED",
+    " N "
+  ],
+  
+  "result": {
+    "id": "annihilator_type_a:annihilation_lightsaber",
+    "count": 1
+  }
+}

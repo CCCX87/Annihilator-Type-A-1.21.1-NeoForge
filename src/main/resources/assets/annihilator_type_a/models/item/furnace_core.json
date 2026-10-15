@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "annihilator_type_a:item/furnace_core"
+    }
+}

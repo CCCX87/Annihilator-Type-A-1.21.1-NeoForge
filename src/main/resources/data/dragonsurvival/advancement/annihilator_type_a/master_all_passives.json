@@ -1,0 +1,63 @@
+{
+  "parent": "dragonsurvival:annihilator_type_a/be_old_dragon",
+  "criteria": {
+    "master_annihilator_type_a_energy": {
+      "conditions": {
+        "ability": "dragonsurvival:annihilator_type_a_energy",
+        "level": 10
+      },
+      "trigger": "dragonsurvival:upgrade_ability"
+    },
+    "master_parameter_overload": {
+      "conditions": {
+        "ability": "dragonsurvival:parameter_overload",
+        "level": 10
+      },
+      "trigger": "dragonsurvival:upgrade_ability"
+    },
+    "master_ore_fortune": {
+      "conditions": {
+        "ability": "dragonsurvival:ore_fortune",
+        "level": 5
+      },
+      "trigger": "dragonsurvival:upgrade_ability"
+    },
+    "master_armor_decomposition": {
+      "conditions": {
+        "ability": "dragonsurvival:armor_decomposition",
+        "level": 4
+      },
+      "trigger": "dragonsurvival:upgrade_ability"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/master_all_passives.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dragonsurvival:dragon_soul"
+    },
+    "title": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/master_all_passives"
+    }
+  },
+  "requirements": [
+    [
+      "master_annihilator_type_a_energy"
+    ],
+    [
+      "master_parameter_overload"
+    ],
+    [
+      "master_ore_fortune"
+    ],
+    [
+      "master_armor_decomposition"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,71 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0,
+                  "per_level_above_first": 1
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 200,
+                  "per_level_above_first": 0
+                },
+                "effects": "annihilator_type_a:ore_fortune",
+                "show_icon": false
+              }
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/ore_fortune_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/ore_fortune"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/ore_fortune"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/ore_fortune"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/ore_fortune"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/ore_fortune"
+      }
+    ]
+  },
+  "upgrade": {
+    "experience_cost": {
+      "type": "minecraft:linear",
+      "base": 25.0,
+      "per_level_above_first": 25.0
+    },
+    "maximum_level": 5,
+    "upgrade_type": "dragonsurvival:experience_points"
+  }
+}

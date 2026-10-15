@@ -1,0 +1,42 @@
+{
+  "parent": "dragonsurvival:annihilator_type_a/breath_kill",
+  "criteria": {
+    "annihilation_moment": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "annihilator_type_a:ignore_invincibility": {
+            "amplifier": {
+              "min": 0
+            },
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/annihilation_moment.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:glass_bottle"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/annihilation_moment"
+    }
+  },
+  "requirements": [
+    [
+      "annihilation_moment"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}

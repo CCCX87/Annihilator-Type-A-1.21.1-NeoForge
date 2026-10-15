@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": { "item": "minecraft:glass" },
+    "D": { "item": "minecraft:diamond" }
+  },
+  "pattern": [
+    "GGG",
+    "GDG",
+    "GGG"
+  ],
+  
+  "result": {
+    "id": "annihilator_type_a:energy_bar",
+    "count": 1
+  }
+}

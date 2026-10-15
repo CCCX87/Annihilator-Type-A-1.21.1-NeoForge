@@ -1,0 +1,171 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 3.0,
+                  "per_level_above_first": 7.0
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 6000.0,
+                  "per_level_above_first": 2000.0
+                },
+                "effects": "minecraft:absorption"
+              }
+            },
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0.0,
+                  "per_level_above_first": 0.0
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 6000.0,
+                  "per_level_above_first": 2000.0
+                },
+                "effects": "minecraft:resistance"
+              }
+            },
+            {
+              "effect_type": "dragonsurvival:particle",
+              "particle_count": 20.0,
+              "particle_data": {
+                "horizontal_position": {
+                  "type": "in_bounding_box"
+                },
+                "horizontal_velocity": {
+                  "base": 0.1
+                },
+                "particle": {
+                  "type": "annihilator_type_a:annihilator_type_a_fire"
+                },
+                "speed": 0.1,
+                "vertical_position": {
+                  "type": "in_bounding_box"
+                },
+                "vertical_velocity": {
+                  "base": 0.1
+                }
+              }
+            }
+          ],
+          "targeting_mode": "all_except_self"
+        },
+        "radius": 30.0,
+        "target_type": "dragonsurvival:area"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:simple",
+    "animations": {
+      "end": {
+        "animation_key": "mass_buff",
+        "layer": "BASE",
+        "locks_neck": true,
+        "locks_tail": true
+      },
+      "start_and_charging": {
+        "animation_key": "cast_mass_buff",
+        "layer": "BASE",
+        "locks_neck": true,
+        "locks_tail": true,
+        "transition_length": 2
+      }
+    },
+    "can_move_while_casting": false,
+    "cast_time": 40.0,
+    "cooldown": 1200.0,
+    "initial_mana_cost": 4.0,
+    "sound": {
+     
+    }
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 6,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 7,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 8,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 9,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      },
+      {
+        "from_level": 10,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/shield"
+      }
+    ]
+  },
+  "upgrade": {
+    "growth_requirement": {
+      "type": "minecraft:lookup",
+      "fallback": {
+        "type": "minecraft:linear",
+        "base": 2.0,
+        "per_level_above_first": 1.0
+      },
+      "values": [
+        0.0,
+        25.0,
+        40.0,
+        60.0,
+        90.0,
+        120.0,
+        150.0,
+        180.0,
+        210.0,
+        240.0
+      ]
+    },
+    "maximum_level": 10,
+    "upgrade_type": "dragonsurvival:dragon_growth"
+  },
+  "usage_blocked": {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "flags": {
+        "is_on_ground": false
+      }
+    }
+  }
+}

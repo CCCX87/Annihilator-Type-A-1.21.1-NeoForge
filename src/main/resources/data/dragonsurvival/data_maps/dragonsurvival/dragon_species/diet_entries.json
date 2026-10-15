@@ -1,0 +1,254 @@
+{
+	"values": {
+		"dragonsurvival:annihilator_type_a": {
+			"neoforge:conditions": [
+				{
+					"type": "dragonsurvival:registered",
+					"registry": "dragonsurvival:dragon_species",
+					"value": "dragonsurvival:annihilator_type_a"
+				}
+			],
+			"neoforge:value": [
+				{
+					"items": "minecraft:quartz",
+					"properties": {
+						"eat_seconds": 0.8,
+						"nutrition": 3,
+						"saturation": 3.0
+					}
+				},
+				{
+					"items": "#minecraft:coals",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 4,
+						"saturation": 4.0
+					}
+				},
+				{
+					"items": "minecraft:iron_ingot",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 6,
+						"saturation": 6
+					}
+				},
+				{
+					"items": "minecraft:gold_ingot",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 8,
+						"saturation": 8
+					}
+				},
+				{
+					"items": "minecraft:diamond",
+					"properties": {
+						"eat_seconds": 1.2,
+						"nutrition": 24,
+						"saturation": 24,
+						"effects": [
+							{
+								"effect": {
+									"id": "minecraft:regeneration",
+									"duration": 600,
+									"amplifier": 0
+								}
+							}
+						]
+					}
+				},
+				{
+					"items": "minecraft:emerald",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 8,
+						"saturation": 8
+					}
+				},
+				{
+					"items": "minecraft:netherite_ingot",
+					"properties": {
+						"eat_seconds": 1.6,
+						"nutrition": 40,
+						"saturation": 40,
+						"effects": [
+							{
+								"effect": {
+									"id": "minecraft:resistance",
+									"duration": 1200,
+									"amplifier": 1
+								}
+							}
+						]
+					}
+				},
+				{
+					"items": "minecraft:lapis_lazuli",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 5,
+						"saturation": 5
+					}
+				},
+				{
+					"items": "minecraft:redstone",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 2,
+						"saturation": 2
+					}
+				},
+				{
+					"items": "minecraft:copper_ingot",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 4,
+						"saturation": 4
+					}
+				},
+				{
+					"items": "minecraft:amethyst_shard",
+					"properties": {
+						"eat_seconds": 1,
+						"nutrition": 10,
+						"saturation": 10
+					}
+				},
+				{
+    			"items": "minecraft:golden_apple",
+    			"properties": {
+        		"eat_seconds": 1.6,
+        		"nutrition": 4,
+        		"saturation": 9.6,
+						"effects": [
+            {
+                "effect": {
+                    "id": "minecraft:absorption",
+                    "duration": 2400,
+                    "amplifier": 0
+                }
+            },
+            {
+                "effect": {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 1
+                }
+            }
+        ]
+    			}
+				},
+				{
+    			"items": "minecraft:enchanted_golden_apple",
+    			"properties": {
+        		"eat_seconds": 1.6,
+        		"nutrition": 4,
+        		"saturation": 9.6,
+						"effects": [
+            {
+                "effect": {
+                    "id": "minecraft:absorption",
+                    "duration": 2400,
+                    "amplifier": 3
+                }
+            },
+            {
+                "effect": {
+                    "id": "minecraft:regeneration",
+                    "duration": 400,
+                    "amplifier": 1
+                }
+            },
+            {
+                "effect": {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 6000,
+                    "amplifier": 0
+                }
+            },
+            {
+                "effect": {
+                    "id": "minecraft:resistance",
+                    "duration": 6000,
+                    "amplifier": 0
+                }
+            }
+        ]
+    			}
+				},
+				{
+        	"items": "minecraft:golden_carrot",
+        	"properties": {
+          "nutrition": 7,
+          "saturation": 18.0
+        	}
+      	},
+				{
+					"items": "dragonsurvival:charged_coal",
+					"properties": {
+						"nutrition": 12,
+						"saturation": 12,
+						"eat_seconds": 1
+					}
+				},
+				{
+					"items": "annihilator_type_a:energy_bar",
+					"properties": {
+						"nutrition": 10,
+						"saturation": 10,
+						"eat_seconds": 1.2,
+						"effects": [
+            {
+              "effect": {
+                "id": "dragonsurvival:source_of_magic",
+                "duration": 600
+              }
+            },
+      			{
+        			"effect": {
+          		"id": "minecraft:regeneration",
+          		"duration": 600,
+          		"amplifier": 0
+        			}
+      			},
+      			{
+        			"effect": {
+          		"id": "minecraft:resistance",
+          		"duration": 600,
+          		"amplifier": 0
+        			}
+      			}
+          	]
+					}
+				},
+				{
+    			"items": "annihilator_type_a:furnace_core",
+    			"properties": {
+        		"eat_seconds": 1.0,
+        		"nutrition": 4,
+        		"saturation": 4,
+						"can_always_eat": true,
+        		"effects": [
+            {
+                "effect": {
+                    "id": "annihilator_type_a:auto_smelt",
+                    "duration":6000,
+                    "amplifier": 0
+                }
+            }
+        		]
+    			}
+				},
+				{
+ 				 	"items": "#minecraft:food",
+  				"properties": {
+    			"eat_seconds": 0.8,
+    			"nutrition": 2,
+    			"saturation": 2.0
+  				}
+				}
+			]
+		}
+	}
+}

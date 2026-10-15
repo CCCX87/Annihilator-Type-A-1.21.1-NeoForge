@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "annihilator_type_a:annihilation_lightsaber" },
+    { "item": "annihilator_type_a:energy_bar" }
+  ],
+  "result": {
+    "id": "annihilator_type_a:annihilation_lightsaber",
+    "count": 1
+  }
+}

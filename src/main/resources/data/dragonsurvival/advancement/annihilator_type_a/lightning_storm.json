@@ -1,0 +1,43 @@
+{
+  "parent": "dragonsurvival:annihilator_type_a/safe_landing",
+  "criteria": {
+    "lightning_storm": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "annihilator_type_a:lightning_storm": {   
+            "amplifier": {
+              "min": 0,
+              "max": 0
+            },
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/lightning_storm.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:lightning_rod"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/lightning_storm"
+    }
+  },
+  "requirements": [
+    [
+      "lightning_storm"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}

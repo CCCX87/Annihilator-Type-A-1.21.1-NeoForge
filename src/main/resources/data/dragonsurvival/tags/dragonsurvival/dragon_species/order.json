@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dragonsurvival:cave_dragon",
+    "dragonsurvival:forest_dragon",
+    "dragonsurvival:sea_dragon",
+    "dragonsurvival:annihilator_type_a"
+  ]
+}

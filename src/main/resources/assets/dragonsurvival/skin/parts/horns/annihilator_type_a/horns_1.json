@@ -1,0 +1,11 @@
+{
+  "key": "horns_1",
+  "texture": "dragonsurvival:textures/dragon/custom/horns.png",
+  "average_hue": 0.5833333333333333,
+  "applicable_species": [
+    "dragonsurvival:annihilator_type_a"
+  ],
+  "applicable_bodies": [
+    "dragonsurvival:annihilator_type_a_body"
+  ]
+}

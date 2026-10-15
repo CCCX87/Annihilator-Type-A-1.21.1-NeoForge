@@ -1,0 +1,11 @@
+{
+  "key": "claws_1",
+  "texture": "dragonsurvival:textures/dragon/custom/claws.png",
+  "average_hue":0.5425925925925926,
+  "applicable_species": [
+    "dragonsurvival:annihilator_type_a"
+  ],
+  "applicable_bodies": [
+    "dragonsurvival:annihilator_type_a_body"
+  ]
+}

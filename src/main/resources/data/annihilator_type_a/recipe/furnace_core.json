@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "food",
+    "pattern": [
+        "ICI",
+        "IFI",
+        "ICI"
+    ],
+    "key": {
+        "I": {
+            "item": "minecraft:iron_ingot"
+        },
+        "C": {
+            "item": "minecraft:coal"
+        },
+        "F": {
+            "item": "minecraft:furnace"
+        }
+    },
+    "result": {
+        "id": "annihilator_type_a:furnace_core",
+        "count": 2
+    }
+}

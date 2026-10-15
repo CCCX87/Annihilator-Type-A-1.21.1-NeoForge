@@ -1,0 +1,22 @@
+{
+  "values": [
+    "dragonsurvival:annihilator_type_a_breath",
+    "dragonsurvival:annihilator_type_a_laser",
+    "dragonsurvival:miniature_uav",
+    "dragonsurvival:annihilation_moment",
+    "dragonsurvival:lightning_storm",
+    "dragonsurvival:shield",
+    "dragonsurvival:gn001",
+
+    "dragonsurvival:annihilator_type_a_energy",
+    "dragonsurvival:parameter_overload",
+    "dragonsurvival:armor_decomposition",
+    "dragonsurvival:ore_fortune",
+   
+    "dragonsurvival:random_fault",
+    "dragonsurvival:annihilator_type_wings",
+    "dragonsurvival:annihilator_spin",
+    "dragonsurvival:no_fall_damage",
+    "dragonsurvival:scotopic_vision"
+  ]
+}

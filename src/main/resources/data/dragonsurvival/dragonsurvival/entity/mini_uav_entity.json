@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:entity",
+  "entity_type": "minecraft:blaze",
+  "behaviors": [
+    {
+      "type": "dragonsurvival:flying_mob",
+      "speed": 0.3
+    },
+    {
+      "type": "dragonsurvival:ranged_attack",
+      "projectile": "dragonsurvival:generic_ball_entity",
+      "speed": 1.5,
+      "interval": 20,
+      "entity_hit_effects": [
+        {
+          "effect_type": "minecraft:instant_damage",
+          "amplifier": 0,
+          "duration": 1
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "trigger": "minecraft:entity_hurt",
+      "conditions": {
+        "damage": {
+          "min": 0
+        }
+      },
+      "run": {
+        "type": "annihilator_type_a:run_function",
+        "function": "annihilator_type_a:check_and_explode"
+      }
+    }
+  ],
+  "misc": {
+    "is_allied": true
+  },
+  "model": "annihilator_type_a:geo/miniature_uav",
+  "texture": "annihilator_type_a:textures/entity/miniature_uav.png"
+}

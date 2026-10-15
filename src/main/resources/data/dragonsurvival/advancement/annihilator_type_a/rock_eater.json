@@ -1,0 +1,124 @@
+{
+  "parent": "dragonsurvival:annihilator_type_a/master_all_passives",
+  "criteria": {
+    "consume_quartz": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:emerald"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_redstone": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:redstone"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_lapis_lazuli": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:lapis_lazuli"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_coal": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:coal"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_iron_ingot": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:iron_ingot"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_copper_ingot": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:copper_ingot"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_gold_ingot": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:gold_ingot"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_diamond": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:diamond"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "consume_netherite_ingot": {
+      "conditions": {
+        "item": {
+          "items": "minecraft:netherite_ingot"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/rock_eater.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:diamond"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/rock_eater"
+    }
+  },
+  "requirements": [
+    [
+      "consume_quartz"
+    ],
+    [
+      "consume_redstone"
+    ],
+    [
+      "consume_lapis_lazuli"
+    ],
+    [
+      "consume_coal"
+    ],
+    [
+      "consume_iron_ingot"
+    ],
+    [
+      "consume_copper_ingot"
+    ],
+    [
+      "consume_gold_ingot"
+    ],
+    [
+      "consume_diamond"
+    ],
+    [
+      "consume_netherite_ingot"
+    ]
+  ],
+  "rewards": {
+    "experience": 60
+  },
+  "sends_telemetry_event": true
+}

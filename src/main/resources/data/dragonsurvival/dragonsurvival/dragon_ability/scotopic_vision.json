@@ -1,0 +1,54 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0,
+                  "per_level_above_first": 1
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 200,
+                  "per_level_above_first": 0
+                },
+                "effects": "minecraft:night_vision",
+                "show_icon": false
+              }
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/scotopic_vision_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/scotopic_vision"
+      }
+    ]
+  },
+  "upgrade": {
+    "items_per_level": [
+      "minecraft:netherite_block"
+    ],
+    "downgrade_items": [],
+    "maximum_level": 1,
+    "upgrade_type": "dragonsurvival:item_based"
+  }
+}

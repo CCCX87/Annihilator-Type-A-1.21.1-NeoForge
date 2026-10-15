@@ -1,0 +1,16 @@
+{
+	"species": "dragonsurvival:annihilator_type_a",
+	"stage": "dragonsurvival:annihilator_type_a_02",
+	"model": "dragonsurvival:annihilator_type_a_model",
+	"parts": {
+		"base": "base_1",
+		"claws": "claws_1",
+		"bottom": "bottom_1",
+		"extra": "extra_1",
+		"eyes": "eyes_1",
+		"horns": "horns_1",
+		"spikes": "spikes_1",
+		"teeth": "teeth_1",
+		"extra1": "extra_2"
+		}
+}

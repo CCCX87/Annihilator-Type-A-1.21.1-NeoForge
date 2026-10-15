@@ -1,0 +1,168 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "amount": {
+                "type": "minecraft:linear",
+                "base": 4.0,
+                "per_level_above_first": 11
+              },
+              "damage_type": "annihilator_type_a:annihilator_breath",
+              "effect_type": "dragonsurvival:damage"
+            },
+
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": 0.0,
+                "duration": 600.0,
+                "effects": "annihilator_type_a:ata_debuff_stack",
+                "probability": 0.2,
+                "show_icon": true
+              }
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "dragonsurvival:entity_check_predicate",
+                "check_for": "living_entity"
+              }
+            }
+          },
+          "targeting_mode": "non_allies"
+        },
+        
+        "range_multiplier": 1.5,
+        "target_type": "dragonsurvival:dragon_breath"
+      },
+      "trigger_rate": 5
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:breath_particles",
+              "main_particle": {
+                "type": "annihilator_type_a:annihilator_type_a_fire",
+                "duration": 37.0,
+                "swirls": false
+              },
+              "secondary_particle": {
+                "type": "annihilator_type_a:annihilator_type_a_large_fire",
+                "duration": 37.0,
+                "swirls": false
+              },
+              "speed_per_growth": 0.02,
+              "spread": 0.04
+            }
+          ],
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:channeled",
+    "animations": {
+      "looping": {
+        "animation_key": "breath",
+        "layer": "BREATH",
+        "locks_neck": false,
+        "locks_tail": false,
+        "transition_length": 5
+      },
+      "start_and_charging": {
+        "animation_key": "spell_charge",
+        "layer": "BREATH",
+        "locks_neck": false,
+        "locks_tail": false,
+        "transition_length": 5
+      }
+    },
+    "cast_time": 1,
+    "continuous_mana_cost": {
+      "type": "ticking",
+      "amount": 0.025
+    },
+    "cooldown": 0,
+    "sound": {
+     
+    }
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 6,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 7,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      },
+      {
+        "from_level": 8,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_breath"
+      }
+    ]
+  },
+  "upgrade": {
+    "growth_requirement": {
+      "type": "minecraft:lookup",
+      "fallback": {
+        "type": "minecraft:linear",
+        "base": 5.0,
+        "per_level_above_first": 10
+      },
+      "values": [
+        0.0,
+        25.0,
+        40.0,
+        60.0,
+        100.0,
+        140.0,
+        170.0,
+        200.0
+      ]
+    },
+    "maximum_level": 8,
+    "upgrade_type": "dragonsurvival:dragon_growth"
+  },
+  "usage_blocked": {
+    "condition": "minecraft:any_of",
+    "terms": [
+      
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:flight",
+              "icon": "annihilator_type_a:textures/ability_effect/annihilator_type_wings.png",
+              "level_requirement": 1
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_wings"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_wings"
+      }
+    ]
+  },
+  "usage_blocked": {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "effects": {
+         "annihilator_type_a:true_damage_conversion": {}
+      }
+    }
+  }
+}

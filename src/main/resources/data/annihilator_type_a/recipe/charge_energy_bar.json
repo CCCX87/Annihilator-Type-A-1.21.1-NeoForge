@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": [
+    {"item": "minecraft:iron_ingot"},
+    {"item": "minecraft:gold_ingot"},
+    {"item": "minecraft:diamond"},
+    {"item": "minecraft:netherite_ingot"},
+    {"item": "minecraft:emerald"},
+    {"item": "minecraft:lapis_lazuli"},
+    {"item": "minecraft:redstone"},
+    {"item": "minecraft:coal"},
+    {"item": "minecraft:quartz"},
+    {"item": "minecraft:copper_ingot"},
+    {"item": "minecraft:amethyst_shard"},
+
+      {"item": "minecraft:iron_block"},
+      {"item": "minecraft:gold_block"},
+      {"item": "minecraft:diamond_block"},
+      {"item": "minecraft:netherite_block"},
+      {"item": "minecraft:emerald_block"},
+      {"item": "minecraft:lapis_block"},
+      {"item": "minecraft:redstone_block"},
+      {"item": "minecraft:coal_block"},
+      {"item": "minecraft:quartz_block"},
+      {"item": "minecraft:copper_block"},
+      {"item": "minecraft:amethyst_block"},
+
+      {"item":"dragonsurvival:heart_element"},
+      {"item":"dragonsurvival:weak_dragon_heart"},
+      {"item":"dragonsurvival:elder_dragon_heart"}
+  ],
+  "e":{
+    "item": "annihilator_type_a:energy_bar"
+  }
+  },
+  "pattern": [
+    "###",
+    "#e#",
+    "###"
+  ],
+  "result": {
+    "id": "annihilator_type_a:energy_bar",
+    "count": 1
+  }
+}

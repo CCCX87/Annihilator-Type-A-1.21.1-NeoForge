@@ -1,0 +1,54 @@
+{
+  "values": {
+    "dragonsurvival:annihilator_type_a": {
+      "neoforge:conditions": [
+        {
+          "type": "dragonsurvival:registered",
+          "registry": "dragonsurvival:dragon_species",
+          "value": "dragonsurvival:annihilator_type_a"
+        }
+      ],
+      "dragonsurvival:annihilator_type_a_02": {
+        "default_skin": {
+          "glow_skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_02_glow.png",
+          "skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_02.png"
+        },
+        "growth_icon": {
+          "hover_icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/adult_stage_hover.png",
+          "icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/adult_stage_main.png"
+        }
+      },
+      "dragonsurvival:annihilator_type_a_03": {
+        "default_skin": {
+          "glow_skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_03_glow.png",
+          "skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_03.png"
+        },
+        "growth_icon": {
+          "hover_icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/ancient_stage_hover.png",
+          "icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/ancient_stage_main.png"
+        }
+      },
+      "dragonsurvival:annihilator_type_a_00": {
+        "default_skin": {
+          "glow_skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_00_glow.png",
+          "skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_00.png"
+        },
+        "growth_icon": {
+          "hover_icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/newborn_stage_hover.png",
+          "icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/newborn_stage_main.png"
+        }
+      },
+      "dragonsurvival:annihilator_type_a_01": {
+        "default_skin": {
+          "glow_skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_01_glow.png",
+          "skin": "dragonsurvival:textures/dragon/annihilator_type_a/annihilator_type_a_01.png"
+        },
+        "growth_icon": {
+          "hover_icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/young_stage_hover.png",
+          "icon": "dragonsurvival:textures/gui/custom/stage/annihilator_type_a/young_stage_main.png"
+        }
+      }
+    }
+    
+  }
+}

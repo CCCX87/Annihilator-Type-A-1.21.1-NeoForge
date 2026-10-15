@@ -1,0 +1,11 @@
+{
+  "key": "spikes_1",
+  "texture": "dragonsurvival:textures/dragon/custom/spikes.png",
+  "average_hue":0.5694444444444444,
+  "applicable_species": [
+    "dragonsurvival:annihilator_type_a"
+  ],
+  "applicable_bodies": [
+    "dragonsurvival:annihilator_type_a_body"
+  ]
+}

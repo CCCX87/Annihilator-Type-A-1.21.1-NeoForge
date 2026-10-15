@@ -1,0 +1,11 @@
+{
+  "key": "teeth_1",
+  "texture": "dragonsurvival:textures/dragon/custom/teeth.png",
+  "average_hue": 0.6,
+  "applicable_species": [
+    "dragonsurvival:annihilator_type_a"
+  ],
+  "applicable_bodies": [
+    "dragonsurvival:annihilator_type_a_body"
+  ]
+}

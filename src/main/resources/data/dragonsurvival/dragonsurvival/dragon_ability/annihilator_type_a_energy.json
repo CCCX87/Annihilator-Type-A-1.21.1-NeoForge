@@ -1,0 +1,405 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "dragonsurvival:max_mana",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 2.0,
+                        "per_level_above_first": 1.0
+                      },
+                      "attribute": "dragonsurvival:mana",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:netherite_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.06,
+                        "per_level_above_first": 0.03
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:netherite_ingot"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:diamond_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.06,
+                        "per_level_above_first": 0.02
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:diamond"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:gold_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.05,
+                        "per_level_above_first": 0.02
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:gold_ingot"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:redstone_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.04,
+                        "per_level_above_first": 0.01
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:redstone"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:lapis_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.04,
+                        "per_level_above_first": 0.01
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:lapis_lazuli"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:iron_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.03,
+                        "per_level_above_first": 0.01
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:iron_ingot"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:modifier",
+              "modifiers": [
+                {
+                  "base": {
+                    "id": "annihilator_type_a:copper_fuel",
+                    "is_hidden": true,
+                    "should_remove_automatically": true
+                  },
+                  "modifiers": [
+                    {
+                      "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.02,
+                        "per_level_above_first": 0.01
+                      },
+                      "attribute": "dragonsurvival:mana_regeneration",
+                      "operation": "add_value"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "target_conditions": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "minecraft:copper_ingot"
+                }
+              }
+            }
+          },
+          "targeting_mode": "allies_and_self"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:passive"
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_1"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_2"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_2"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_3"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_3"
+      },
+      {
+        "from_level": 6,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_4"
+      },
+      {
+        "from_level": 7,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_4"
+      },
+      {
+        "from_level": 8,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_4"
+      },
+      {
+        "from_level": 9,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_5"
+      },
+      {
+        "from_level": 10,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/annihilator_type_a_energy_5"
+      }
+    ]
+  },
+  "upgrade": {
+    "experience_cost": {
+      "type": "minecraft:linear",
+      "base": 36.0,
+      "per_level_above_first": 36.0
+    },
+    "maximum_level": 10,
+    "upgrade_type": "dragonsurvival:experience_points"
+  }
+}

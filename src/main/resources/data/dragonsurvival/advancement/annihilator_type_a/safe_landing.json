@@ -1,0 +1,44 @@
+{
+  "parent": "dragonsurvival:annihilator_type_a/annihilation_moment",
+  "criteria": {
+    "safe_landing": {
+      "trigger": "minecraft:fall_from_height",
+      "conditions": {
+        "start_position": {
+          "position": {
+            "y": {
+              "min": 1000
+            }
+          }
+        },
+         "distance": {
+          "y": {
+              "min": 1000
+            }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/safe_landing.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:elytra"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dragonsurvival.advancement.annihilator_type_a/safe_landing"
+    }
+  },
+  "requirements": [
+    [
+      "safe_landing"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}
