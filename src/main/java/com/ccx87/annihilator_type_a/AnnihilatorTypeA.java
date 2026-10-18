@@ -64,6 +64,9 @@ public class AnnihilatorTypeA {
         ModItems.register(modEventBus);
         ModDataComponents.COMPONENTS.register(modEventBus);
 
+        modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON,
+                com.ccx87.annihilator_type_a.common.ServerConfig.SPEC);
+
 
 
 

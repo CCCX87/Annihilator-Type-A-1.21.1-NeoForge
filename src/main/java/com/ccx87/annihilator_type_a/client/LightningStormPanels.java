@@ -177,19 +177,19 @@ public final class LightningStormPanels {
       int motes = 8 + Math.round(8.0F * size);
       for (int i = 0; i < motes; i++) {
          double angle = random.nextDouble() * Math.PI * 2.0;
-         double speed = 0.28 + random.nextDouble() * 0.22;
+         double speed = (0.28 + random.nextDouble() * 0.22) * (0.55 + 0.45 * size);
          level.addParticle(
             ParticleTypes.END_ROD,
-            player.getX() + Math.cos(angle) * 0.5,
+            player.getX() + Math.cos(angle) * 0.5 * (0.55 + 0.45 * size),
             centreY + (random.nextDouble() - 0.5) * (double)player.getBbHeight() * 0.8,
-            player.getZ() + Math.sin(angle) * 0.5,
+            player.getZ() + Math.sin(angle) * 0.5 * (0.55 + 0.45 * size),
             Math.cos(angle) * speed,
             (random.nextDouble() - 0.35) * 0.18,
             Math.sin(angle) * speed
          );
       }
       int ring = 18;
-      double ringRadius = 1.2 + random.nextDouble() * 0.6;
+      double ringRadius = (1.2 + random.nextDouble() * 0.6) * (0.55 + 0.45 * size);
       for (int i = 0; i < ring; i++) {
          double angle = Math.PI * 2.0 * (double)i / (double)ring;
          level.addParticle(

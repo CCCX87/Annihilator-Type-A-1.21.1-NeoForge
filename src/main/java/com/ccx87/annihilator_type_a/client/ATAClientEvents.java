@@ -51,11 +51,25 @@ public final class ATAClientEvents {
       AnnihilationClientState.tick(Minecraft.getInstance());
       LightningStormWarning.tick(Minecraft.getInstance());
       LightningStormPanels.tick(Minecraft.getInstance());
+        com.ccx87.annihilator_type_a.client.hud.AnnihilationChargeHud.tick(Minecraft.getInstance());
+        com.ccx87.annihilator_type_a.client.hud.MarkAdjudicateHud.tick(Minecraft.getInstance());
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateOrbs.tick(Minecraft.getInstance());
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateBeams.tick(Minecraft.getInstance());
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateRemote.tick(Minecraft.getInstance());
    }
 
    @SubscribeEvent
    public static void onRenderLevelStage(RenderLevelStageEvent event) {
       AnnihilationRingRenderer.onRenderLevelStage(event);
+   }
+
+   @SubscribeEvent
+   public static void onLevelUnload(net.neoforged.neoforge.event.level.LevelEvent.Unload event) {
+      if (event.getLevel().isClientSide()) {
+         MarkAdjudicateRemote.clear();
+         MarkAdjudicateBeams.reset();
+         MarkAdjudicateOrbs.reset();
+      }
    }
 
    @SubscribeEvent
@@ -69,4 +83,41 @@ public final class ATAClientEvents {
    public static void onRenderStormPanels(RenderLevelStageEvent event) {
       LightningStormPanels.render(event);
    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onRenderAnnihilationCharge(net.neoforged.neoforge.client.event.RenderGuiEvent.Post event) {
+        net.minecraft.client.Minecraft minecraft = net.minecraft.client.Minecraft.getInstance();
+        com.ccx87.annihilator_type_a.client.hud.AnnihilationChargeHud.render(event.getGuiGraphics(),
+                minecraft.getWindow().getGuiScaledWidth(), minecraft.getWindow().getGuiScaledHeight());
+        com.ccx87.annihilator_type_a.client.hud.AnnihilationChargeHud.renderSustainDim(event.getGuiGraphics(),
+                minecraft.getWindow().getGuiScaledWidth(), minecraft.getWindow().getGuiScaledHeight());
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onRenderMarkAdjudicate(net.neoforged.neoforge.client.event.RenderGuiEvent.Post event) {
+        net.minecraft.client.Minecraft minecraft = net.minecraft.client.Minecraft.getInstance();
+        com.ccx87.annihilator_type_a.client.hud.MarkAdjudicateHud.render(event.getGuiGraphics(),
+                minecraft.getWindow().getGuiScaledWidth(), minecraft.getWindow().getGuiScaledHeight());
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onRenderMarkAdjudicateOrbs(net.neoforged.neoforge.client.event.RenderLevelStageEvent event) {
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateOrbs.render(event);
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onRenderMarkAdjudicateBeams(net.neoforged.neoforge.client.event.RenderLevelStageEvent event) {
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateBeams.render(event);
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateRemote.render(event);
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onComputeCameraAngles(net.neoforged.neoforge.client.event.ViewportEvent.ComputeCameraAngles event) {
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateBeams.onComputeCameraAngles(event);
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onComputeFov(net.neoforged.neoforge.client.event.ViewportEvent.ComputeFov event) {
+        com.ccx87.annihilator_type_a.client.MarkAdjudicateBeams.onComputeFov(event);
+    }
 }

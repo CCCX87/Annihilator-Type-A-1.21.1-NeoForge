@@ -1,6 +1,7 @@
 {
   "actions": [
     {
+      "trigger_rate": 15.0,
       "target_selection": {
         "applied_effects": {
           "entity_effect": [
@@ -34,6 +35,7 @@
       }
     },
     {
+      "trigger_rate": 15.0,
       "target_selection": {
         "applied_effects": {
           "entity_effect": [
@@ -47,11 +49,12 @@
                 },
                 "duration": {
                   "type": "minecraft:linear",
-                  "base": 200,
+                  "base": -1.0,
                   "per_level_above_first": 0
                 },
                 "effects": "annihilator_type_a:parameter_overload",
-                "show_icon": false
+                "show_icon": false,
+                "effect_particles": false
               }
             }
           ],

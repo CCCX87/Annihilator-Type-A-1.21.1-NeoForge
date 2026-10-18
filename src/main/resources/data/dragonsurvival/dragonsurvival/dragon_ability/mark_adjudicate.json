@@ -1,0 +1,125 @@
+{
+  "actions": [
+    {
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0.0,
+                  "per_level_above_first": 1.0
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 3.0,
+                  "per_level_above_first": 0.0
+                },
+                "show_icon": false,
+                "effects": "annihilator_type_a:mark_adjudicate_impact"
+              }
+            }
+          ],
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    },
+    {
+      "trigger_point": "charging",
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0.0,
+                  "per_level_above_first": 0.0
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 5.0,
+                  "per_level_above_first": 0.0
+                },
+                "show_icon": false,
+                "effects": "annihilator_type_a:mark_adjudicate_charge"
+              }
+            }
+          ],
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      }
+    }
+  ],
+  "activation": {
+    "activation_type": "dragonsurvival:simple",
+    "cast_time": 60,
+    "cooldown": 800,
+    "initial_mana_cost": {
+      "type": "minecraft:linear",
+      "base": 6.0,
+      "per_level_above_first": 2.0
+    },
+    "animations": {
+      "start_and_charging": {
+        "animation_key": "spell_charge",
+        "layer": "BREATH",
+        "locks_neck": false,
+        "locks_tail": false,
+        "transition_length": 5
+      }
+    }
+  },
+  "icon": {
+    "texture_entries": [
+      {
+        "from_level": 0,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/mark_adjudicate_0"
+      },
+      {
+        "from_level": 1,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/mark_adjudicate"
+      },
+      {
+        "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/mark_adjudicate"
+      },
+      {
+        "from_level": 3,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/mark_adjudicate"
+      },
+      {
+        "from_level": 4,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/mark_adjudicate"
+      },
+      {
+        "from_level": 5,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/mark_adjudicate"
+      }
+    ]
+  },
+  "upgrade": {
+    "growth_requirement": {
+      "type": "minecraft:lookup",
+      "fallback": {
+        "type": "minecraft:linear",
+        "base": 20.0,
+        "per_level_above_first": 20.0
+      },
+      "values": [
+        60.0,
+        120.0,
+        180.0,
+        240.0,
+        300.0
+      ]
+    },
+    "maximum_level": 5,
+    "upgrade_type": "dragonsurvival:dragon_growth"
+  }
+}

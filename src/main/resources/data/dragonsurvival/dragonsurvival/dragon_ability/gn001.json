@@ -107,7 +107,7 @@
        "texture_entries": [
       {
         "from_level": 0,
-        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/gn001"
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/gn001_0"
       },
       {
         "from_level": 1,
@@ -115,6 +115,10 @@
       },
       {
         "from_level": 2,
+        "texture_resource": "dragonsurvival:abilities/annihilator_type_a/gn001"
+      },
+      {
+        "from_level": 3,
         "texture_resource": "dragonsurvival:abilities/annihilator_type_a/gn001"
       }
     ]
@@ -129,11 +133,12 @@
         "per_level_above_first": 1.0
       },
       "values": [
+        60,
         150,
         250
       ]
     },
-    "maximum_level": 2,
+    "maximum_level": 3,
     "upgrade_type": "dragonsurvival:dragon_growth"
   }
 }

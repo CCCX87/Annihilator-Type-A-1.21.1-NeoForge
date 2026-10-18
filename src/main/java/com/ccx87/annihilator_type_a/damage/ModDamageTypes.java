@@ -35,5 +35,9 @@ public class ModDamageTypes {
             Registries.DAMAGE_TYPE,
             ResourceLocation.fromNamespaceAndPath(MOD_ID, "gn001_sword"));
 
+    public static final ResourceKey<DamageType> MARK_ADJUDICATE = ResourceKey.create(
+            Registries.DAMAGE_TYPE,
+            ResourceLocation.fromNamespaceAndPath(MOD_ID, "mark_adjudicate"));
+
 
 }

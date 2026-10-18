@@ -67,4 +67,25 @@ public class ATAEffects {
    public static void register(IEventBus eventBus) {
       MOB_Effects.register(eventBus);
    }
+
+   /** Annihilation moment charge marker: applied only while its cast bar runs, no icon, pure marker. */
+   public static final net.minecraft.core.Holder<net.minecraft.world.effect.MobEffect> ANNIHILATION_CHARGE =
+      MOB_Effects.register("annihilation_charge",
+         () -> new net.minecraft.world.effect.MobEffect(net.minecraft.world.effect.MobEffectCategory.NEUTRAL, 0x6FE3FF) {});
+
+   /** Mark Adjudication charge marker: applied only while its cast bar runs, no icon, pure marker. */
+   public static final net.minecraft.core.Holder<net.minecraft.world.effect.MobEffect> MARK_ADJUDICATE_CHARGE =
+      MOB_Effects.register("mark_adjudicate_charge",
+         () -> new net.minecraft.world.effect.MobEffect(net.minecraft.world.effect.MobEffectCategory.NEUTRAL, 0xFF4040) {});
+
+   /**
+    * Mark Adjudication impact marker: applied for a couple of ticks when the cast completes.
+    *
+    * <p>It exists so the JSON can hand the ability level to the server: the effect's amplifier is
+    * {@code level - 1}, taken from the same {@code LevelBasedValue} the damage used to use. The
+    * strike handler reads it, removes it, and lands the damage when the lance actually hits.
+    */
+   public static final net.minecraft.core.Holder<net.minecraft.world.effect.MobEffect> MARK_ADJUDICATE_IMPACT =
+      MOB_Effects.register("mark_adjudicate_impact",
+         () -> new net.minecraft.world.effect.MobEffect(net.minecraft.world.effect.MobEffectCategory.NEUTRAL, 0xFF4040) {});
 }

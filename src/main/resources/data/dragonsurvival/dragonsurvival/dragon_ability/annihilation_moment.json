@@ -234,6 +234,34 @@
         },
         "target_type": "dragonsurvival:self"
       }
+    },
+    {
+      "trigger_point": "charging",
+      "target_selection": {
+        "applied_effects": {
+          "entity_effect": [
+            {
+              "effect_type": "dragonsurvival:potion",
+              "potion": {
+                "amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0.0,
+                  "per_level_above_first": 0.0
+                },
+                "duration": {
+                  "type": "minecraft:linear",
+                  "base": 5.0,
+                  "per_level_above_first": 0.0
+                },
+                "show_icon": false,
+                "effects": "annihilator_type_a:annihilation_charge"
+              }
+            }
+          ],
+          "targeting_mode": "all"
+        },
+        "target_type": "dragonsurvival:self"
+      }
     }
   ],
   "activation": {
@@ -255,7 +283,7 @@
       }
     },
     "cast_time": 40.0,
-    "cooldown": 1800.0,
+    "cooldown": 1200.0,
     "initial_mana_cost": {
       "type": "minecraft:linear",
       "base": 2.0,
