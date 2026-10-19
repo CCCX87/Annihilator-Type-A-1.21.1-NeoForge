@@ -2,27 +2,22 @@
   "emotes": [
     {
       "animation_key": "empty",
-      "blend": true,
       "can_move": true,
       "locks_head": true,
       "locks_tail": true,
       "loops": true
     },
-    
     {
       "animation_key": "spell_charge",
       "blend": true,
       "can_move": true,
       "loops": true
     },
-    
     {
       "animation_key": "breath",
-      "blend": true,
       "can_move": true,
       "loops": true
     },
-    
     {
       "animation_key": "spell_shot",
       "blend": true,
@@ -40,15 +35,11 @@
       "can_move": true,
       "loops": true
     },
-    
     {
       "animation_key": "sit",
       "can_move": true,
       "loops": true
     },
-    
-    
-    
     {
       "animation_key": "sleep_left",
       "can_move": true,
@@ -69,10 +60,6 @@
         "sound_event": "minecraft:entity.fox.sleep"
       }
     },
-    
-    
-    
-    
     {
       "animation_key": "spinning_on_back",
       "can_move": true,
@@ -86,8 +73,6 @@
       "speed": 2.0,
       "translation_override": "spinning_on_back_fast"
     },
-    
-    
     {
       "animation_key": "swim_fast",
       "can_move": true,
@@ -110,7 +95,6 @@
     },
     {
       "animation_key": "empty",
-      "blend": true,
       "sound": {
         "interval": 160,
         "pitch": 0.8,
@@ -121,7 +105,6 @@
     },
     {
       "animation_key": "empty",
-      "blend": true,
       "sound": {
         "interval": 160,
         "pitch": 0.3,
@@ -144,7 +127,6 @@
     },
     {
       "animation_key": "breath",
-      "blend": true,
       "sound": {
         "interval": 160,
         "pitch": 0.1,
@@ -156,7 +138,6 @@
     },
     {
       "animation_key": "breath",
-      "blend": true,
       "sound": {
         "interval": 160,
         "pitch": 0.2,
@@ -201,7 +182,6 @@
     },
     {
       "animation_key": "breath",
-      "blend": true,
       "sound": {
         "interval": 160,
         "pitch": 0.8,

@@ -73,6 +73,8 @@ public final class MarkAdjudicateBeams {
     private static Vec3 renderCamera;
     private static boolean markFired;
     private static boolean laserFired;
+    private static boolean loggedCameraShake;
+    private static int shakeFrames;
 
     private MarkAdjudicateBeams() {}
 
@@ -87,6 +89,8 @@ public final class MarkAdjudicateBeams {
         punch = 0.0F;
         markFired = false;
         laserFired = false;
+        loggedCameraShake = false;
+        shakeFrames = 0;
     }
 
     public static void tick(Minecraft minecraft) {
@@ -130,9 +134,8 @@ public final class MarkAdjudicateBeams {
                 powerDown();
             } else if (ticks > LASER_START && ticks < LASER_START + LASER_HOLD + LASER_FADE) {
                 int age = ticks - LASER_START;
-                int base = age < LASER_HOLD ? 12 : 6;
-                int tremor = (int) Math.round(2.5 * Math.sin(age * 0.45D));
-                shakeTicks = Math.max(shakeTicks, base + tremor);
+                shakeTicks = Math.max(shakeTicks,
+                        age < LASER_HOLD ? SHAKE_TICKS : Math.round(SHAKE_TICKS * 0.55F));
                 if (age < LASER_HOLD) {
                     rainSparks();
                 }
@@ -834,6 +837,8 @@ public final class MarkAdjudicateBeams {
             return;
         }
         laserFired = true;
+        loggedCameraShake = false;
+        shakeFrames = 0;
         Vec3 point = lockedTarget;
         shakeTicks = SHAKE_TICKS;
         punch = 1.0F;
@@ -879,20 +884,46 @@ public final class MarkAdjudicateBeams {
         if (punch > 0.0F) {
             event.setFOV(event.getFOV() * (1.0D + punch * 0.18D));
         }
+        float beam = beamStrength();
+        if (beam > 0.0F) {
+            Minecraft minecraft = Minecraft.getInstance();
+            float time = minecraft.level == null ? 0.0F : minecraft.level.getGameTime();
+            float phase = (float) (time % 3600L) + (float) event.getPartialTick();
+            float noise = Mth.sin(phase * 6.1F) + 0.5F * Mth.sin(phase * 9.3F);
+            event.setFOV(event.getFOV() * (1.0D + 0.003D * noise * beam));
+        }
+    }
+
+    private static float beamStrength() {
+        if (ticks <= LASER_START) {
+            return 0.0F;
+        }
+        int age = ticks - LASER_START;
+        if (age >= LASER_HOLD + LASER_FADE) {
+            return 0.0F;
+        }
+        if (age < LASER_HOLD) {
+            return 1.0F;
+        }
+        return 1.0F - (age - LASER_HOLD) / (float) LASER_FADE;
     }
 
     public static void onComputeCameraAngles(ViewportEvent.ComputeCameraAngles event) {
-        if (shakeTicks <= 0 && punch <= 0.0F) {
+        float strength = Math.max(shakeTicks / (float) SHAKE_TICKS, beamStrength());
+        if (strength <= 0.0F && punch <= 0.0F) {
             return;
         }
         Minecraft minecraft = Minecraft.getInstance();
-        float strength = shakeTicks / (float) SHAKE_TICKS;
         long time = minecraft.level == null ? 0L : minecraft.level.getGameTime();
-        float phase = (float) (event.getPartialTick() + time);
-        if (shakeTicks > 0) {
-            event.setYaw(event.getYaw() + Mth.sin(phase * 1.9F) * 3.2F * strength);
-            event.setPitch(event.getPitch() + Mth.cos(phase * 2.3F) * 2.4F * strength);
-            event.setRoll(event.getRoll() + Mth.sin(phase * 1.4F) * 1.8F * strength);
+        shakeFrames++;
+        float phase = shakeFrames * 0.41F;
+        if (strength > 0.0F) {
+            float yawNoise = Mth.sin(phase * 5.7F) + 0.5F * Mth.sin(phase * 8.9F);
+            float pitchNoise = Mth.cos(phase * 6.3F) + 0.5F * Mth.cos(phase * 9.7F);
+            float rollNoise = Mth.sin(phase * 4.9F) + 0.5F * Mth.cos(phase * 8.1F);
+            event.setYaw(event.getYaw() + yawNoise * 0.4F * strength);
+            event.setPitch(event.getPitch() + pitchNoise * 0.33F * strength);
+            event.setRoll(event.getRoll() + rollNoise * 0.22F * strength);
         }
         if (punch > 0.0F) {
             event.setPitch(event.getPitch() + punch * 9.0F);
