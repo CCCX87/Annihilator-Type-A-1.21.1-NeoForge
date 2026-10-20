@@ -25,7 +25,9 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -36,6 +38,44 @@ public class LightningStormHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(LightningStormHandler.class);
     private static final ConcurrentHashMap<UUID, Boolean> activeStorms = new ConcurrentHashMap<>();
     private static final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    private static final List<ScheduledFuture<?>> PENDING = new CopyOnWriteArrayList<>();
+
+    @SubscribeEvent
+    public static void onServerStopping(net.neoforged.neoforge.event.server.ServerStoppingEvent event) {
+        for (ScheduledFuture<?> future : PENDING) {
+            future.cancel(false);
+        }
+        PENDING.clear();
+        activeStorms.clear();
+    }
+
+    private static void scheduleTask(Runnable body, long delayMillis) {
+        PENDING.removeIf(ScheduledFuture::isDone);
+        PENDING.add(scheduler.schedule(() -> {
+            try {
+                body.run();
+            } catch (Throwable throwable) {
+                LOGGER.warn("Lightning storm task failed", throwable);
+            }
+        }, delayMillis, TimeUnit.MILLISECONDS));
+    }
+
+    private static void runOnServer(ServerLevel level, Runnable body) {
+        var server = level.getServer();
+        if (server == null || !server.isRunning()) {
+            return;
+        }
+        server.execute(() -> {
+            if (!server.isRunning()) {
+                return;
+            }
+            try {
+                body.run();
+            } catch (Throwable throwable) {
+                LOGGER.warn("Lightning storm task failed on the server thread", throwable);
+            }
+        });
+    }
 
     @SubscribeEvent
     public static void onProjectileHit(ProjectileImpactEvent event) {
@@ -86,9 +126,7 @@ public class LightningStormHandler {
         activeStorms.put(casterUUID, true);
 
         //天气
-        level.getServer().execute(() -> {
-            level.setWeatherParameters(10, duration+20, true, true);
-        });
+        runOnServer(level, () -> level.setWeatherParameters(10, duration + 20, true, true));
 
         Player caster = level.getPlayerByUUID(casterUUID);
         DamageSource damageSource;
@@ -101,10 +139,10 @@ public class LightningStormHandler {
         int strikes = duration / interval;
         for (int i = 0; i < strikes; i++) {
             int delay = 30 + i * interval;
-            scheduler.schedule(() -> {
+            scheduleTask(() -> {
                 if (!activeStorms.containsKey(casterUUID)) return;
 
-                level.getServer().execute(() -> {
+                runOnServer(level, () -> {
                     double angle = level.random.nextDouble() * 2 * Math.PI;
                     double dist = level.random.nextDouble() * radius;
                     double dx = Math.cos(angle) * dist;
@@ -154,16 +192,14 @@ public class LightningStormHandler {
                         entity.hurt(damageSource, damage);
                     }
                 });
-            }, delay * 50L, TimeUnit.MILLISECONDS);
+            }, delay * 50L);
         }
 
         long cleanupDelay = duration * 50L + 1000;
-        scheduler.schedule(() -> {
+        scheduleTask(() -> {
             activeStorms.remove(casterUUID);
-            level.getServer().execute(() -> {
-                level.setWeatherParameters(0, 0, false, false);
-            });
-            }, cleanupDelay, TimeUnit.MILLISECONDS);
+            runOnServer(level, () -> level.setWeatherParameters(0, 0, false, false));
+            }, cleanupDelay);
     }
     private static DamageSource buildDamageSource(ServerLevel level, Player caster) {
         var damageTypeHolder = level.registryAccess()

@@ -204,7 +204,12 @@ public final class MarkAdjudicateStrikeHandler {
                     crater.abandon();
                     break;
                 }
-                crater.world.destroyBlock(pos, false);
+                try {
+                    crater.world.destroyBlock(pos, false);
+                } catch (Throwable throwable) {
+                    com.ccx87.annihilator_type_a.AnnihilatorTypeA.LOGGER.debug(
+                            "Skipped a block that failed to break during Mark Adjudication: {}", pos, throwable);
+                }
             }
             if (crater.isDone()) {
                 iterator.remove();

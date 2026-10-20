@@ -50,8 +50,9 @@ public class OreFortuneHandler {
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onBlockDrops(BlockDropsEvent event) {
-        Player player = (Player) event.getBreaker();
-        if (player == null) return;
+        if (!(event.getBreaker() instanceof Player player)) {
+            return;
+        }
 
         BlockState state = event.getState();
         if (!ORE_BLOCKS.contains(state.getBlock())) return;

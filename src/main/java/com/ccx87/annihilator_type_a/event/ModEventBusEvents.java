@@ -254,8 +254,10 @@ public class ModEventBusEvents {
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onBlockDrops(BlockDropsEvent event) {
-        Player player = (Player) event.getBreaker();
-        if (player == null || player.isCreative()) return;
+        if (!(event.getBreaker() instanceof Player player)) {
+            return;
+        }
+        if (player.isCreative()) return;
         if (!player.hasEffect(ATAEffects.AUTO_SMELT)) return;
 
         Level level = player.level();
