@@ -259,9 +259,7 @@ public class ModEventBusEvents {
         }
         if (player.isCreative()) return;
         if (!player.hasEffect(ATAEffects.AUTO_SMELT)) return;
-
-        Level level = player.level();
-        if (!(level instanceof ServerLevel)) return;
+        if (!(event.getLevel() instanceof ServerLevel level)) return;
 
         List<ItemEntity> drops = event.getDrops();
         if (drops.isEmpty()) return;
@@ -277,32 +275,36 @@ public class ModEventBusEvents {
             }
         }
 
-        List<ItemEntity> toRemove = new ArrayList<>();
-        List<ItemStack> toAdd = new ArrayList<>();
-
         for (ItemEntity dropEntity : drops) {
             ItemStack original = dropEntity.getItem();
             if (original.isEmpty()) continue;
-
-            Optional<RecipeHolder<SmeltingRecipe>> recipe = level.getRecipeManager()
-                    .getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput(original), level);
-
-            if (recipe.isPresent()) {
-                ItemStack result = recipe.get().value().getResultItem(level.registryAccess());
-                if (!result.isEmpty()) {
-                    ItemStack smelted = result.copyWithCount(original.getCount() * result.getCount());
-                    toRemove.add(dropEntity);
-                    toAdd.add(smelted);
-                }
+            ItemStack smelted = smelt(level, original);
+            if (!smelted.isEmpty()) {
+                dropEntity.setItem(smelted);
             }
         }
+    }
 
-        if (toRemove.isEmpty()) return;
-
-        drops.removeAll(toRemove);
-        for (ItemStack stack : toAdd) {
-            Block.popResource(level, event.getPos(), stack);
+    private static ItemStack smelt(ServerLevel level, ItemStack input) {
+        SingleRecipeInput recipeInput = new SingleRecipeInput(input);
+        Optional<RecipeHolder<SmeltingRecipe>> smelting = level.getRecipeManager()
+                .getRecipeFor(RecipeType.SMELTING, recipeInput, level);
+        if (smelting.isPresent()) {
+            return scaleResult(smelting.get().value().getResultItem(level.registryAccess()), input.getCount());
         }
+        Optional<RecipeHolder<net.minecraft.world.item.crafting.BlastingRecipe>> blasting =
+                level.getRecipeManager().getRecipeFor(RecipeType.BLASTING, recipeInput, level);
+        if (blasting.isPresent()) {
+            return scaleResult(blasting.get().value().getResultItem(level.registryAccess()), input.getCount());
+        }
+        return ItemStack.EMPTY;
+    }
+
+    private static ItemStack scaleResult(ItemStack result, int inputCount) {
+        if (result.isEmpty()) {
+            return ItemStack.EMPTY;
+        }
+        return result.copyWithCount(result.getCount() * inputCount);
     }
 
     private static float getOreDamageBonus(ItemStack stack, int amplifier) {
